@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\VHDL\rca_4bit\simulation\qsim
+vrca_4bit
+Z1 !s100 8WOV9zG_[B?:d18QMObJb3
+Z2 IoURY<=cSzKDzWFQGg@31C0
+Z3 VjYYM=`ezOjLaC1fUD;jNP2
+Z4 dC:\VHDL\rca_4bit\simulation\qsim
+Z5 w1740447547
+Z6 8rca_4bit.vo
+Z7 Frca_4bit.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|rca_4bit.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1740447548.141000
+Z12 !s107 rca_4bit.vo|
+!s101 -O0
+vrca_4bit_vlg_check_tst
+!i10b 1
+Z13 !s100 EP?j[5]:CzzDZKR4kC[B:2
+Z14 IAYC4UQKOKlzj;^BF9iT`?2
+Z15 VSe=fKNnRFXP8blL=<iW?B0
+R4
+Z16 w1740447546
+Z17 8Waveform.vwf.vt
+Z18 FWaveform.vwf.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z19 !s108 1740447548.196000
+Z20 !s107 Waveform.vwf.vt|
+Z21 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+vrca_4bit_vlg_sample_tst
+!i10b 1
+Z22 !s100 Q>2=0NSiNQRkREdgGbAMB1
+Z23 I^<5dWHFoeZ_j3Sio^@13C3
+Z24 V=l7Z28@4KI>``6Ld7FSMP0
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vrca_4bit_vlg_vec_tst
+!i10b 1
+!s100 TFePUN2`S8g2]9lZLJBjf2
+IgJilMVzBFHgK][_4<SL6J1
+Z25 V]NFad<@W=^h_Id?AB2Po91
+R4
+R16
+R17
+R18
+Z26 L0 263
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

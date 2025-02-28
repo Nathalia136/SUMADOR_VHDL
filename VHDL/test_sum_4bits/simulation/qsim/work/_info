@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\VHDL\test_sum_4bits\simulation\qsim
+vtest_sum_4bits
+Z1 !s100 Mm9iCCa=7LiTa>3D4d<=o2
+Z2 IDJ[WCQU]CgdQ`WnEKe8LC3
+Z3 V6KCPIN1j;a><I0zoj_a0[2
+Z4 dC:\VHDL\test_sum_4bits\simulation\qsim
+Z5 w1740448284
+Z6 8test_sum_4bits.vo
+Z7 Ftest_sum_4bits.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|test_sum_4bits.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1740448285.548000
+Z12 !s107 test_sum_4bits.vo|
+!s101 -O0
+vtest_sum_4bits_vlg_check_tst
+!i10b 1
+Z13 !s100 j>md8CS0f?OJJ=5>9]e?@2
+Z14 InV3ifC<BBA_BUHSJT3^Yh2
+Z15 VW9flLaB5T09dh3TaI:lTa2
+R4
+Z16 w1740448283
+Z17 8Waveform.vwf.vt
+Z18 FWaveform.vwf.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z19 !s108 1740448285.614000
+Z20 !s107 Waveform.vwf.vt|
+Z21 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R10
+vtest_sum_4bits_vlg_sample_tst
+!i10b 1
+Z22 !s100 :n:IF@MHXJh]UjA2Bm`<^0
+Z23 I5GP_<I^R:]Smj@KMh;f781
+Z24 Vh06:boN:0gO^4ziEV?2IV0
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vtest_sum_4bits_vlg_vec_tst
+!i10b 1
+!s100 k?Z5[82X1l7U<N^[PVOkb3
+I?Zk_`b:1O0ZLhOB?0^4Cd0
+Z25 V?S938mIUW[DkMJ?HWhMBJ3
+R4
+R16
+R17
+R18
+Z26 L0 665
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

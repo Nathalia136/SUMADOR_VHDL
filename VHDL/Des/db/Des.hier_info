@@ -1,0 +1,25 @@
+|Des
+Sum[0] => Add0.IN9
+Sum[1] => Add0.IN8
+Sum[2] => Add0.IN7
+Sum[3] => Add0.IN6
+Cout => carry_adjusted[4].IN0
+Cin => carry_adjusted[4].IN1
+off => Decenas.OUTPUTSELECT
+off => Decenas.OUTPUTSELECT
+off => Decenas.OUTPUTSELECT
+off => Decenas.OUTPUTSELECT
+off => Unidades.OUTPUTSELECT
+off => Unidades.OUTPUTSELECT
+off => Unidades.OUTPUTSELECT
+off => Unidades.OUTPUTSELECT
+Decenas[0] <= Decenas.DB_MAX_OUTPUT_PORT_TYPE
+Decenas[1] <= Decenas.DB_MAX_OUTPUT_PORT_TYPE
+Decenas[2] <= Decenas.DB_MAX_OUTPUT_PORT_TYPE
+Decenas[3] <= Decenas.DB_MAX_OUTPUT_PORT_TYPE
+Unidades[0] <= Unidades.DB_MAX_OUTPUT_PORT_TYPE
+Unidades[1] <= Unidades.DB_MAX_OUTPUT_PORT_TYPE
+Unidades[2] <= Unidades.DB_MAX_OUTPUT_PORT_TYPE
+Unidades[3] <= Unidades.DB_MAX_OUTPUT_PORT_TYPE
+
+

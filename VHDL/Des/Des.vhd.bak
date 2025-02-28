@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity Des is
+    Port (
+        Sum  : in  STD_LOGIC_VECTOR (3 downto 0);
+        Cout : in  STD_LOGIC;
+        Decenas : out STD_LOGIC_VECTOR (3 downto 0);
+        Unidades : out STD_LOGIC_VECTOR (3 downto 0)
+    );
+end Des;
+
+architecture arch_Des of Des is
+begin
+    process(Sum, Cout)
+        variable total : INTEGER range 0 to 31;
+    begin
+        total := CONV_INTEGER(Sum) + (CONV_INTEGER(Cout) * 16); -- Incluye el carry
+        
+        Decenas <= CONV_STD_LOGIC_VECTOR(total / 10, 4); -- D = Sum / 10
+        Unidades <= CONV_STD_LOGIC_VECTOR(total mod 10, 4); -- U = Sum mod 10
+    end process;
+end arch_Des;

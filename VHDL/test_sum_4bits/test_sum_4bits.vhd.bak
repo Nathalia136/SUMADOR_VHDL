@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity test_sum_4bits is
+    Port (
+        Sum  : in  STD_LOGIC_VECTOR (3 downto 0);
+        Cout : in  STD_LOGIC;
+        D : out STD_LOGIC_VECTOR (3 downto 0);
+        U : out STD_LOGIC_VECTOR (3 downto 0)
+    );
+end test_sum_4bits;
+
+architecture arch_test_sum_4bits of test_sum_4bits is
+
+	signal total : INTEGER range 0 to 31;
+	
+begin
+		 total <= CONV_INTEGER(Sum) + (CONV_INTEGER(Cout) * 16);  
+		 
+		 D <= CONV_STD_LOGIC_VECTOR(total / 10, 4); 
+		 U <= CONV_STD_LOGIC_VECTOR(total mod 10, 4); 
+		 
+end arch_test_sum_4bits;

@@ -1,0 +1,361 @@
+|test_sum_4bits
+A[0] => rca_4bit:U1.A[0]
+A[0] => DECOD7:U3.ABCD[0]
+A[1] => rca_4bit:U1.A[1]
+A[1] => DECOD7:U3.ABCD[1]
+A[2] => rca_4bit:U1.A[2]
+A[2] => DECOD7:U3.ABCD[2]
+A[3] => rca_4bit:U1.A[3]
+A[3] => DECOD7:U3.ABCD[3]
+B[0] => rca_4bit:U1.B[0]
+B[0] => DECOD7:U4.ABCD[0]
+B[1] => rca_4bit:U1.B[1]
+B[1] => DECOD7:U4.ABCD[1]
+B[2] => rca_4bit:U1.B[2]
+B[2] => DECOD7:U4.ABCD[2]
+B[3] => rca_4bit:U1.B[3]
+B[3] => DECOD7:U4.ABCD[3]
+Cin => rca_4bit:U1.Cin
+Cin => Des:U2.Cin
+display0[0] << DECOD7:U3.DISPLAY[0]
+display0[1] << DECOD7:U3.DISPLAY[1]
+display0[2] << DECOD7:U3.DISPLAY[2]
+display0[3] << DECOD7:U3.DISPLAY[3]
+display0[4] << DECOD7:U3.DISPLAY[4]
+display0[5] << DECOD7:U3.DISPLAY[5]
+display0[6] << DECOD7:U3.DISPLAY[6]
+display1[0] << DECOD7:U4.DISPLAY[0]
+display1[1] << DECOD7:U4.DISPLAY[1]
+display1[2] << DECOD7:U4.DISPLAY[2]
+display1[3] << DECOD7:U4.DISPLAY[3]
+display1[4] << DECOD7:U4.DISPLAY[4]
+display1[5] << DECOD7:U4.DISPLAY[5]
+display1[6] << DECOD7:U4.DISPLAY[6]
+display2[0] << DECOD7:U5.DISPLAY[0]
+display2[1] << DECOD7:U5.DISPLAY[1]
+display2[2] << DECOD7:U5.DISPLAY[2]
+display2[3] << DECOD7:U5.DISPLAY[3]
+display2[4] << DECOD7:U5.DISPLAY[4]
+display2[5] << DECOD7:U5.DISPLAY[5]
+display2[6] << DECOD7:U5.DISPLAY[6]
+display3[0] << DECOD7:U6.DISPLAY[0]
+display3[1] << DECOD7:U6.DISPLAY[1]
+display3[2] << DECOD7:U6.DISPLAY[2]
+display3[3] << DECOD7:U6.DISPLAY[3]
+display3[4] << DECOD7:U6.DISPLAY[4]
+display3[5] << DECOD7:U6.DISPLAY[5]
+display3[6] << DECOD7:U6.DISPLAY[6]
+
+
+|test_sum_4bits|rca_4bit:U1
+A[0] => LessThan0.IN4
+A[0] => full_adder:A0.A
+A[1] => LessThan0.IN3
+A[1] => full_adder:A1.A
+A[2] => LessThan0.IN2
+A[2] => full_adder:A2.A
+A[3] => LessThan0.IN1
+A[3] => full_adder:A3.A
+B[0] => X1.IN0
+B[0] => LessThan0.IN8
+B[1] => X2.IN0
+B[1] => LessThan0.IN7
+B[2] => X3.IN0
+B[2] => LessThan0.IN6
+B[3] => X4.IN0
+B[3] => LessThan0.IN5
+Cin => X1.IN1
+Cin => X2.IN1
+Cin => X3.IN1
+Cin => X4.IN1
+Cin => off.IN1
+Cin => full_adder:A0.Cin
+Sum[0] <= full_adder:A0.Sum
+Sum[1] <= full_adder:A1.Sum
+Sum[2] <= full_adder:A2.Sum
+Sum[3] <= full_adder:A3.Sum
+Cout <= full_adder:A3.Cout
+off <= off.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A0
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A0|half_adder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A0|half_adder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A1
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A1|half_adder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A1|half_adder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A2
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A2|half_adder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A2|half_adder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A3
+A => half_adder:HA1.A
+B => half_adder:HA1.B
+Cin => half_adder:HA2.B
+Sum <= half_adder:HA2.Sum
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A3|half_adder:HA1
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|rca_4bit:U1|full_adder:A3|half_adder:HA2
+A => Sum.IN0
+A => Cout.IN0
+B => Sum.IN1
+B => Cout.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|Des:U2
+Sum[0] => Add0.IN9
+Sum[1] => Add0.IN8
+Sum[2] => Add0.IN7
+Sum[3] => Add0.IN6
+Cout => carry_adjusted[4].IN0
+Cin => carry_adjusted[4].IN1
+off => Decenas.OUTPUTSELECT
+off => Decenas.OUTPUTSELECT
+off => Decenas.OUTPUTSELECT
+off => Decenas.OUTPUTSELECT
+off => Unidades.OUTPUTSELECT
+off => Unidades.OUTPUTSELECT
+off => Unidades.OUTPUTSELECT
+off => Unidades.OUTPUTSELECT
+Decenas[0] <= Decenas.DB_MAX_OUTPUT_PORT_TYPE
+Decenas[1] <= Decenas.DB_MAX_OUTPUT_PORT_TYPE
+Decenas[2] <= Decenas.DB_MAX_OUTPUT_PORT_TYPE
+Decenas[3] <= Decenas.DB_MAX_OUTPUT_PORT_TYPE
+Unidades[0] <= Unidades.DB_MAX_OUTPUT_PORT_TYPE
+Unidades[1] <= Unidades.DB_MAX_OUTPUT_PORT_TYPE
+Unidades[2] <= Unidades.DB_MAX_OUTPUT_PORT_TYPE
+Unidades[3] <= Unidades.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|DECOD7:U3
+ABCD[0] => Mux0.IN19
+ABCD[0] => Mux1.IN19
+ABCD[0] => Mux2.IN19
+ABCD[0] => Mux3.IN19
+ABCD[0] => Mux4.IN19
+ABCD[0] => Mux5.IN19
+ABCD[0] => Mux6.IN19
+ABCD[1] => Mux0.IN18
+ABCD[1] => Mux1.IN18
+ABCD[1] => Mux2.IN18
+ABCD[1] => Mux3.IN18
+ABCD[1] => Mux4.IN18
+ABCD[1] => Mux5.IN18
+ABCD[1] => Mux6.IN18
+ABCD[2] => Mux0.IN17
+ABCD[2] => Mux1.IN17
+ABCD[2] => Mux2.IN17
+ABCD[2] => Mux3.IN17
+ABCD[2] => Mux4.IN17
+ABCD[2] => Mux5.IN17
+ABCD[2] => Mux6.IN17
+ABCD[3] => Mux0.IN16
+ABCD[3] => Mux1.IN16
+ABCD[3] => Mux2.IN16
+ABCD[3] => Mux3.IN16
+ABCD[3] => Mux4.IN16
+ABCD[3] => Mux5.IN16
+ABCD[3] => Mux6.IN16
+DISPLAY[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|DECOD7:U4
+ABCD[0] => Mux0.IN19
+ABCD[0] => Mux1.IN19
+ABCD[0] => Mux2.IN19
+ABCD[0] => Mux3.IN19
+ABCD[0] => Mux4.IN19
+ABCD[0] => Mux5.IN19
+ABCD[0] => Mux6.IN19
+ABCD[1] => Mux0.IN18
+ABCD[1] => Mux1.IN18
+ABCD[1] => Mux2.IN18
+ABCD[1] => Mux3.IN18
+ABCD[1] => Mux4.IN18
+ABCD[1] => Mux5.IN18
+ABCD[1] => Mux6.IN18
+ABCD[2] => Mux0.IN17
+ABCD[2] => Mux1.IN17
+ABCD[2] => Mux2.IN17
+ABCD[2] => Mux3.IN17
+ABCD[2] => Mux4.IN17
+ABCD[2] => Mux5.IN17
+ABCD[2] => Mux6.IN17
+ABCD[3] => Mux0.IN16
+ABCD[3] => Mux1.IN16
+ABCD[3] => Mux2.IN16
+ABCD[3] => Mux3.IN16
+ABCD[3] => Mux4.IN16
+ABCD[3] => Mux5.IN16
+ABCD[3] => Mux6.IN16
+DISPLAY[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|DECOD7:U5
+ABCD[0] => Mux0.IN19
+ABCD[0] => Mux1.IN19
+ABCD[0] => Mux2.IN19
+ABCD[0] => Mux3.IN19
+ABCD[0] => Mux4.IN19
+ABCD[0] => Mux5.IN19
+ABCD[0] => Mux6.IN19
+ABCD[1] => Mux0.IN18
+ABCD[1] => Mux1.IN18
+ABCD[1] => Mux2.IN18
+ABCD[1] => Mux3.IN18
+ABCD[1] => Mux4.IN18
+ABCD[1] => Mux5.IN18
+ABCD[1] => Mux6.IN18
+ABCD[2] => Mux0.IN17
+ABCD[2] => Mux1.IN17
+ABCD[2] => Mux2.IN17
+ABCD[2] => Mux3.IN17
+ABCD[2] => Mux4.IN17
+ABCD[2] => Mux5.IN17
+ABCD[2] => Mux6.IN17
+ABCD[3] => Mux0.IN16
+ABCD[3] => Mux1.IN16
+ABCD[3] => Mux2.IN16
+ABCD[3] => Mux3.IN16
+ABCD[3] => Mux4.IN16
+ABCD[3] => Mux5.IN16
+ABCD[3] => Mux6.IN16
+DISPLAY[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test_sum_4bits|DECOD7:U6
+ABCD[0] => Mux0.IN19
+ABCD[0] => Mux1.IN19
+ABCD[0] => Mux2.IN19
+ABCD[0] => Mux3.IN19
+ABCD[0] => Mux4.IN19
+ABCD[0] => Mux5.IN19
+ABCD[0] => Mux6.IN19
+ABCD[1] => Mux0.IN18
+ABCD[1] => Mux1.IN18
+ABCD[1] => Mux2.IN18
+ABCD[1] => Mux3.IN18
+ABCD[1] => Mux4.IN18
+ABCD[1] => Mux5.IN18
+ABCD[1] => Mux6.IN18
+ABCD[2] => Mux0.IN17
+ABCD[2] => Mux1.IN17
+ABCD[2] => Mux2.IN17
+ABCD[2] => Mux3.IN17
+ABCD[2] => Mux4.IN17
+ABCD[2] => Mux5.IN17
+ABCD[2] => Mux6.IN17
+ABCD[3] => Mux0.IN16
+ABCD[3] => Mux1.IN16
+ABCD[3] => Mux2.IN16
+ABCD[3] => Mux3.IN16
+ABCD[3] => Mux4.IN16
+ABCD[3] => Mux5.IN16
+ABCD[3] => Mux6.IN16
+DISPLAY[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+DISPLAY[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
